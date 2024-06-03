@@ -1,6 +1,5 @@
 package pl.memorygameszkola;
 
-import pl.memorygameszkola.stockOfCard.Card;
 import pl.memorygameszkola.stockOfCard.CardDeck;
 
 public class TestFunctionCard {

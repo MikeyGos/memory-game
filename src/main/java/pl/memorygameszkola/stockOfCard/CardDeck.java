@@ -1,5 +1,7 @@
 package pl.memorygameszkola.stockOfCard;
 
+import pl.memorygameszkola.Card;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -13,7 +15,6 @@ public class CardDeck {
 
         for (String card : deck) {
             cardDeck.add(new Card(card));
-//            cardDeck.add(new Card(card));
         }
     }
     public void shuffle(){

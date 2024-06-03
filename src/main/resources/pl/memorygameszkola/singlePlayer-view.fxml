@@ -14,15 +14,45 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@singlePlayer.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.memorygameszkola.controllers.SinglePlayer">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@singlePlayer.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.memorygameszkola.controllers.SinglePlayerController">
    <children>
-      <VBox layoutX="20.0" layoutY="33.0" prefHeight="1838.6" prefWidth="800.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox layoutX="20.0" layoutY="33.0" prefHeight="1838.6" prefWidth="800.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <FlowPane alignment="CENTER">
+            <HBox alignment="CENTER">
                <children>
-                  <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                  <GridPane alignment="CENTER" prefHeight="142.0" prefWidth="678.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="592.7999877929688" minWidth="10.0" prefWidth="138.99997558593748" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="953.5999450683594" minWidth="10.0" prefWidth="539.0000244140625" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="72.6000244140625" minHeight="10.0" prefHeight="72.6000244140625" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="attempt" text="Próby:">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="attemptScore" text="0" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <Button fx:id="playAgainButton" mnemonicParsing="false" onAction="#playAgain" prefHeight="51.0" prefWidth="226.0" text="Zagraj ponownie">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <FlowPane fx:id="imageFlowPane" alignment="CENTER">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/lew.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -30,7 +60,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -38,7 +68,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -46,7 +76,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -54,7 +84,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -62,7 +92,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -70,7 +100,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -78,7 +108,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -86,7 +116,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -94,7 +124,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -102,7 +132,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -110,7 +140,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -118,7 +148,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="26.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -126,7 +156,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="224.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -134,7 +164,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="421.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -142,7 +172,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="619.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -150,7 +180,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="816.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -158,7 +188,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="1014.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/znakZapytania.jpg" />
+                        <Image url="@imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -166,50 +196,9 @@
                   </ImageView>
                </children>
             </FlowPane>
-            <HBox alignment="CENTER">
-               <children>
-                  <GridPane prefHeight="142.0" prefWidth="678.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="592.7999877929688" minWidth="10.0" prefWidth="138.99997558593748" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="953.5999450683594" minWidth="10.0" prefWidth="539.0000244140625" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints maxHeight="76.19998779296876" minHeight="10.0" prefHeight="69.3999755859375" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="72.6000244140625" minHeight="10.0" prefHeight="72.6000244140625" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <Label text="Poprawnie:">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label text="Próby:" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label text="0" GridPane.columnIndex="1">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label text="0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </GridPane>
-                  <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="226.0" text="Zagraj ponownie">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
          </children>
          <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </padding>
       </VBox>
    </children>

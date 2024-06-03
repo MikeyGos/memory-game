@@ -1,7 +1,11 @@
-package pl.memorygameszkola.stockOfCard;
+package pl.memorygameszkola;
+
+import javafx.scene.image.Image;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class Card {
 
@@ -38,4 +42,20 @@ public class Card {
     public String toString() {
         return cardName + " działa";
     }
+
+    public Image getImage(){
+        String pathName = "imagesCard/" +cardName +".jpg";
+        return new Image(Objects.requireNonNull(Card.class.getResourceAsStream(pathName)));
+    }
+    public Image getQuestionMark(){
+        return new Image(Objects.requireNonNull(Card.class.getResourceAsStream("imagesCard/znakZapytania.jpg")));
+    }
+
+    public Image getRandomCard(){
+        List<String> cardNameList = getCardNameList();
+        Collections.shuffle(cardNameList);
+        String pathName = "imagesCard/" +cardName +".jpg";
+        return new Image(Objects.requireNonNull(Card.class.getResourceAsStream(pathName)));
+    }
 }
+

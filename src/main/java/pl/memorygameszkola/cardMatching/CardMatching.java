@@ -1,6 +1,6 @@
 package pl.memorygameszkola.cardMatching;
 
-import pl.memorygameszkola.stockOfCard.Card;
+import pl.memorygameszkola.Card;
 
 public class CardMatching extends Card {
 

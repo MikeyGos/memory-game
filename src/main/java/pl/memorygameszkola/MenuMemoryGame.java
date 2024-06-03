@@ -9,7 +9,7 @@ public class MenuMemoryGame extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("menu-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MenuMemoryGame.class.getResource("menu-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Memory Game!");
         stage.setScene(scene);
@@ -18,6 +18,6 @@ public class MenuMemoryGame extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }
