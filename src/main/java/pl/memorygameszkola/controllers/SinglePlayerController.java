@@ -46,7 +46,7 @@ public class SinglePlayerController implements Initializable {
             imageView.setImage(new Card().getQuestionMark());
             imageView.setUserData(i);
 
-            imageView.setOnMouseClicked(mouseEvent -> System.out.println(imageView.getUserData()));
+            imageView.setOnMouseClicked(mouseEvent -> System.out.println(imageView.getUserData())f);
         }
     }
 }
