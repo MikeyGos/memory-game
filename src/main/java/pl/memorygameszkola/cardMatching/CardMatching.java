@@ -6,7 +6,7 @@ public class CardMatching extends Card {
 
     private boolean matched;
 
-    public CardMatching(String cardName, boolean matched) {
+    public CardMatching(String cardName) {
         super(cardName);
         this.matched = false;
     }

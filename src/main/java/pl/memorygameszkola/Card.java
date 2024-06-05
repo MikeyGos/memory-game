@@ -40,12 +40,14 @@ public class Card {
 
     @Override
     public String toString() {
-        return cardName + " działa";
+        return cardName;
     }
-
+    public String pathName(){
+       String pathName;
+        return pathName = "imagesCard/" + cardName +".jpg";
+    }
     public Image getImage(){
-        String pathName = "imagesCard/" +cardName +".jpg";
-        return new Image(Objects.requireNonNull(Card.class.getResourceAsStream(pathName)));
+        return new Image(Objects.requireNonNull(Card.class.getResourceAsStream(pathName())));
     }
     public Image getQuestionMark(){
         return new Image(Objects.requireNonNull(Card.class.getResourceAsStream("imagesCard/znakZapytania.jpg")));
@@ -54,8 +56,7 @@ public class Card {
     public Image getRandomCard(){
         List<String> cardNameList = getCardNameList();
         Collections.shuffle(cardNameList);
-        String pathName = "imagesCard/" +cardName +".jpg";
-        return new Image(Objects.requireNonNull(Card.class.getResourceAsStream(pathName)));
+        return new Image(Objects.requireNonNull(Card.class.getResourceAsStream(pathName())));
     }
-}
 
+}

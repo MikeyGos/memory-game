@@ -25,4 +25,10 @@ public class CardDeck {
     public String toString() {
         return cardDeck.toString();
     }
+    public Card topCard(){
+        if(cardDeck.size() > 0){
+            return cardDeck.remove(0);
+        } else
+            throw new NullPointerException("Błąd cardDeck topCard");
+    }
 }
