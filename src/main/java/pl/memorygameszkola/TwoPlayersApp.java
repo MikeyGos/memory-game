@@ -16,6 +16,7 @@ public class TwoPlayersApp extends Application {
         stage.setTitle("Memory Game!");
         stage.setScene(scene);
         stage.show();
+
     }
 
     public static void main(String[] args) {
