@@ -1,4 +1,4 @@
-package pl.memorygameszkola.cardMatching;
+package pl.memorygameszkola.matching;
 
 import pl.memorygameszkola.Card;
 

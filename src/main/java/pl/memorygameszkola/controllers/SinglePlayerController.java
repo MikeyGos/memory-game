@@ -2,12 +2,11 @@ package pl.memorygameszkola.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import pl.memorygameszkola.Card;
-import pl.memorygameszkola.cardMatching.CardMatching;
+import pl.memorygameszkola.matching.CardMatching;
 import pl.memorygameszkola.stockOfCard.CardDeck;
 
 import java.net.URL;
@@ -20,24 +19,18 @@ public class SinglePlayerController implements Initializable {
     private ArrayList<CardMatching> usedCardDeck;
     private CardMatching firstCard, secondCard;
     private int numbOfAttempt;
-    private int numbOfScore;
-    @FXML
-    private Label attempt;
+    private int firstCardIndex;
+    private int secondCardIndex;
+
     @FXML
     private Label attemptScore;
 
     @FXML
     private FlowPane imageFlowPane;
 
-    @FXML
-    private ImageView imageView;
-
-    @FXML
-    private Button playAgainButton;
 
     @FXML
     void playAgain() {
-
         firstCard = null;
         secondCard = null;
         numbOfAttempt = 0;
@@ -60,52 +53,62 @@ public class SinglePlayerController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         initializeImageView();
+
         playAgain();
     }
 
-    private void initializeImageView() {
+    protected void initializeImageView() {
         for (int i = 0; i < imageFlowPane.getChildren().size(); i++) {
             ImageView imageView = (ImageView) imageFlowPane.getChildren().get(i);
             imageView.setImage(new Card().getQuestionMark());
             imageView.setUserData(i);
 
             imageView.setOnMouseClicked(mouseEvent -> {
-                switchCard((int) imageView.getUserData());
+                switchCard((int) imageView.getUserData()
+
+                );
 
             });
         }
     }
 
 
-    private void switchAllCards() {
+    protected void switchAllCards() {
         for (int i = 0; i < imageFlowPane.getChildren().size(); i++) {
             ImageView imageView = (ImageView) imageFlowPane.getChildren().get(i);
             CardMatching card = usedCardDeck.get(i);
 
-            if (card.isMatched())
+            if (card.isMatched()) {
                 imageView.setImage(card.getImage());
-            else
+            } else {
                 imageView.setImage(card.getQuestionMark());
+            }
         }
     }
 
-    private void switchCard(int indexCard) {
+    protected void switchCard(int indexCard) {
+        switchCards(indexCard);
+
+    }
+
+    private void switchCards(int indexCard) {
         if (firstCard == null && secondCard == null) {
             switchAllCards();
         }
         ImageView image = (ImageView) imageFlowPane.getChildren().get(indexCard);
         if (firstCard == null) {
             firstCard = usedCardDeck.get(indexCard);
+            firstCardIndex = indexCard;
             image.setImage(firstCard.getImage());
 
         } else if (secondCard == null) {
-            numbOfAttempt++;
             secondCard = usedCardDeck.get(indexCard);
+            secondCardIndex = indexCard;
             image.setImage(secondCard.getImage());
             checkMatched();
+            numbOfAttempt++;
             attemptScoreAdd();
         }
-
     }
 
     private void attemptScoreAdd() {
@@ -114,12 +117,17 @@ public class SinglePlayerController implements Initializable {
     }
 
     private void checkMatched() {
-        if (firstCard.sameCard(secondCard)) {
+        if (firstCardIndex == secondCardIndex) {
+            secondCard = null;
+        } else if (firstCard.sameCard(secondCard)) {
             firstCard.setMatched(true);
             secondCard.setMatched(true);
-        }
+            firstCard =null;
+            secondCard = null;
+        } else {
             firstCard = null;
             secondCard = null;
+        }
     }
 
 
