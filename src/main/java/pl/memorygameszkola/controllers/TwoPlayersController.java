@@ -2,47 +2,47 @@ package pl.memorygameszkola.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.FlowPane;
-import pl.memorygameszkola.stockOfCard.Player;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class TwoPlayersController implements Initializable {
-
-    @FXML
-    private AnchorPane anchorPane;
-
-    @FXML
-    private Label attempt;
-
-    @FXML
-    private FlowPane imageFlowPane;
-
-    @FXML
-    private Button playAgainButton;
-
-    @FXML
-    private Label scoreFirstPlayer;
-
-    @FXML
-    private Label scoreSecondPlayer;
+public class TwoPlayersController extends BaseMemoryGameController implements Initializable {
 
 
     @FXML
-    void playAgain(KeyEvent event) {
+    private Label firstPlayerScore;
 
-    }
+    @FXML
+    private Label secondPlayerScore;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        firstScore = 0;
+        secondScore = 0;
+        initializeImageView();
+        playAgain();
     }
 
+    @Override
+    protected void playAgain() {
+        firstScore = 0;
+        secondScore = 0;
+        firstPlayerScore.setText(Integer.toString(firstScore));
+        secondPlayerScore.setText(Integer.toString(secondScore));
+        super.playAgain();
+    }
+
+    @Override
+    protected void score() {
+        if(currentPlayer == 1){
+            firstScore++;
+            firstPlayerScore.setText(Integer.toString(firstScore));
+        } else {
+            secondScore++;
+            secondPlayerScore.setText(Integer.toString(secondScore));
+        }
+    }
 }
 
 
