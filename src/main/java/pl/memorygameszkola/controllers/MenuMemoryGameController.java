@@ -6,10 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import pl.memorygameszkola.MenuMemoryGame;
-import pl.memorygameszkola.SinglePlayerApp;
 
 import java.io.IOException;
 import java.net.URL;
@@ -17,12 +15,6 @@ import java.util.ResourceBundle;
 
 public class MenuMemoryGameController implements Initializable {
 
-    @FXML
-    private Button cardCollection;
-    @FXML
-    private Button singlePlayer;
-    @FXML
-    private Button twoPlayers;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
