@@ -23,11 +23,12 @@
                     <children>
                         <GridPane alignment="CENTER" prefHeight="142.0" prefWidth="1167.0">
                             <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="592.7999877929688" minWidth="10.0" prefWidth="142.0" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="592.7999877929688" minWidth="10.0" prefWidth="142.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="592.7999877929688" minWidth="10.0" prefWidth="157.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="592.7999877929688" minWidth="10.0" prefWidth="85.0" />
                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="1049.5999786376954" minWidth="10.0" prefWidth="231.60000000000002" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1049.5999786376954" minWidth="10.0" prefWidth="630.4000366210937" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1049.5999786376954" minWidth="10.0" prefWidth="131.8000244140626" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1049.5999786376954" minWidth="10.0" prefWidth="183.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1049.5999786376954" minWidth="10.0" prefWidth="336.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1049.5999786376954" minWidth="10.0" prefWidth="155.0" />
                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="1049.5999786376954" minWidth="10.0" prefWidth="70.99997558593759" />
                             </columnConstraints>
                             <rowConstraints>
@@ -35,12 +36,14 @@
                                 <RowConstraints maxHeight="72.6000244140625" minHeight="10.0" prefHeight="72.6000244140625" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <Label fx:id="scoreFirstPlayer" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                <Label text="Gracz 2" GridPane.columnIndex="4" />
-                                <Label alignment="TOP_RIGHT" text="Wynik:" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                                <Label fx:id="scoreSecondPlayer" text="0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                <Label fx:id="firstPlayerScore" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label prefHeight="47.0" prefWidth="147.0" text="Czerwony" GridPane.columnIndex="5" />
+                                <Label alignment="TOP_RIGHT" text="Wynik:" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                <Label fx:id="secondPlayerScore" text="0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
                                 <Label alignment="CENTER" text="Wynik:" textAlignment="CENTER" GridPane.rowIndex="1" />
-                                <Label fx:id="attempt" prefHeight="71.0" prefWidth="165.0" text="Gracz 1" />
+                                <Label prefHeight="71.0" prefWidth="165.0" text="Niebieski" />
+                                <Label text="Ilość prób: " GridPane.columnIndex="3" />
+                                <Label fx:id="attemptScore" text="0" GridPane.columnIndex="4" />
                             </children>
                         </GridPane>
                     </children>
@@ -154,11 +157,27 @@
                         </ImageView>
                     </children>
                 </FlowPane>
-                <Button fx:id="playAgainButton" mnemonicParsing="false" onAction="#playAgain" onKeyPressed="#playAgain" prefHeight="51.0" prefWidth="226.0" text="Zagraj ponownie">
-                    <font>
+            <HBox prefHeight="66.0" prefWidth="825.0">
+               <children>
+                      <Button fx:id="playAgainButton" mnemonicParsing="false" onAction="#playAgain" onKeyPressed="#playAgain" prefHeight="51.0" prefWidth="226.0" text="Zagraj ponownie">
+                          <font>
+                              <Font size="24.0" />
+                          </font>
+                      </Button>
+                  <Label prefHeight="47.0" prefWidth="442.0" />
+                  <Button layoutX="60.0" layoutY="15.0" mnemonicParsing="false" onAction="#backToMenu" onKeyPressed="#playAgain" prefHeight="51.0" prefWidth="226.0" text="Wróć do menu">
+                     <font>
                         <Font size="24.0" />
-                    </font>
-                </Button>
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="50.0" right="50.0" top="5.0" />
+               </padding>
+            </HBox>
             </children>
             <padding>
                 <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />

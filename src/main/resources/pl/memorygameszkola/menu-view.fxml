@@ -10,6 +10,7 @@
 
 <AnchorPane maxHeight="800.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@menuGame.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.memorygameszkola.controllers.MenuMemoryGameController">
    <children>
+      
       <VBox alignment="CENTER" layoutX="449.0" layoutY="148.0" prefHeight="800.0" prefWidth="1200.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Button fx:id="singlePlayer" alignment="CENTER" mnemonicParsing="false" onAction="#singlePlayer" prefHeight="150.0" prefWidth="500.0" text="1 Gracz" textAlignment="CENTER">
@@ -29,11 +30,13 @@
             </Button>
          </children>
       </VBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1200.0" />
-      <Label alignment="TOP_CENTER" prefHeight="58.0" prefWidth="596.0" text="Memory Game">
-         <font>
-            <Font size="80.0" />
-         </font>
-      </Label>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1200.0">
+         <children>
+            <Label alignment="TOP_CENTER" prefHeight="58.0" prefWidth="596.0" text="Memory Game">
+               <font>
+                  <Font size="80.0" />
+               </font>
+            </Label>
+         </children></HBox>
    </children>
 </AnchorPane>
