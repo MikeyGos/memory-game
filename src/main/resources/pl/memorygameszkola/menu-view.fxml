@@ -17,7 +17,7 @@
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="150.0" prefWidth="500.0" text="2 Graczy" textAlignment="CENTER">
+            <Button fx:id="twoPlayers" alignment="CENTER" mnemonicParsing="false" onAction="#twoPlayers" prefHeight="150.0" prefWidth="500.0" text="2 Graczy" textAlignment="CENTER">
                <padding>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>

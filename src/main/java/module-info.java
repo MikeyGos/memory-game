@@ -8,4 +8,6 @@ module pl.memorygameszkola.memorygame {
     opens pl.memorygameszkola.stockOfCard to javafx.fxml;
     opens pl.memorygameszkola.controllers to javafx.fxml;
     exports pl.memorygameszkola.controllers;
+    exports pl.memorygameszkola.matching;
+    opens pl.memorygameszkola.matching to javafx.fxml;
 }
