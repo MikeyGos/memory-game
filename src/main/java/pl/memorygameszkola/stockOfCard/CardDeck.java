@@ -1,7 +1,5 @@
 package pl.memorygameszkola.stockOfCard;
 
-import pl.memorygameszkola.Card;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -15,6 +13,7 @@ public class CardDeck {
 
         for (String card : deck) {
             cardDeck.add(new Card(card));
+//            cardDeck.add(new Card(card));
         }
     }
     public void shuffle(){
@@ -24,11 +23,5 @@ public class CardDeck {
     @Override
     public String toString() {
         return cardDeck.toString();
-    }
-    public Card topCard(){
-        if(cardDeck.size() > 0){
-            return cardDeck.remove(0);
-        } else
-            throw new NullPointerException("Błąd cardDeck topCard");
     }
 }
