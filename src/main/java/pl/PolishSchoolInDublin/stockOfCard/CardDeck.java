@@ -1,6 +1,6 @@
-package pl.memorygameszkola.stockOfCard;
+package pl.PolishSchoolInDublin.stockOfCard;
 
-import pl.memorygameszkola.Card;
+import pl.PolishSchoolInDublin.Card;
 
 import java.util.ArrayList;
 import java.util.Collections;

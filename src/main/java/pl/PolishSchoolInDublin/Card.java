@@ -1,4 +1,4 @@
-package pl.memorygameszkola;
+package pl.PolishSchoolInDublin;
 
 import javafx.scene.image.Image;
 

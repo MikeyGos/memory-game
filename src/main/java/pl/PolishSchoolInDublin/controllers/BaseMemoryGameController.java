@@ -1,4 +1,4 @@
-package pl.memorygameszkola.controllers;
+package pl.PolishSchoolInDublin.controllers;
 
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
@@ -11,10 +11,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import pl.memorygameszkola.Card;
-import pl.memorygameszkola.MenuMemoryGame;
-import pl.memorygameszkola.matching.CardMatching;
-import pl.memorygameszkola.stockOfCard.CardDeck;
+import pl.PolishSchoolInDublin.Card;
+import pl.PolishSchoolInDublin.MenuMemoryGame;
+import pl.PolishSchoolInDublin.matching.CardMatching;
+import pl.PolishSchoolInDublin.stockOfCard.CardDeck;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ public abstract class BaseMemoryGameController {
     protected FlowPane imageFlowPane;
     @FXML
     void backToMenu(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MenuMemoryGame.class.getResource("menu-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MenuMemoryGame.class.getResource("/pl/PolishSchoolInDublin/view/menu-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

@@ -1,4 +1,4 @@
-package pl.memorygameszkola;
+package pl.PolishSchoolInDublin;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +9,7 @@ public class MenuMemoryGame extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(MenuMemoryGame.class.getResource("menu-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MenuMemoryGame.class.getResource("/pl/PolishSchoolInDublin/view/menu-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Memory Game!");
         stage.setScene(scene);

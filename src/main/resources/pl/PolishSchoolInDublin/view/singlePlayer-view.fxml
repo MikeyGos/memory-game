@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@singlePlayer.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.memorygameszkola.controllers.SinglePlayerController">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@../css/singlePlayer.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.PolishSchoolInDublin.controllers.SinglePlayerController">
    <children>
       <VBox alignment="CENTER" layoutX="20.0" layoutY="33.0" prefHeight="1838.6" prefWidth="800.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -62,7 +62,7 @@
                <children>
                   <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imagesCard/lew.jpg" />
+                        <Image url="@../imagesCard/lew.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -73,7 +73,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imagesCard/znakZapytania.jpg" />
+                        <Image url="@../imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -81,7 +81,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imagesCard/znakZapytania.jpg" />
+                        <Image url="@../imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -89,7 +89,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imagesCard/znakZapytania.jpg" />
+                        <Image url="@../imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -97,7 +97,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imagesCard/znakZapytania.jpg" />
+                        <Image url="@../imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -105,7 +105,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imagesCard/znakZapytania.jpg" />
+                        <Image url="@../imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -113,7 +113,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="26.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imagesCard/znakZapytania.jpg" />
+                        <Image url="@../imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -121,7 +121,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="224.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imagesCard/znakZapytania.jpg" />
+                        <Image url="@../imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -129,7 +129,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="900.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imagesCard/znakZapytania.jpg" />
+                        <Image url="@../imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -137,7 +137,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="900.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imagesCard/znakZapytania.jpg" />
+                        <Image url="@../imagesCard/znakZapytania.jpg" />
                      </image>
                      <FlowPane.margin>
                         <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
@@ -145,7 +145,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="109.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imagesCard/lew.jpg" />
+                        <Image url="@../imagesCard/lew.jpg" />
                      </image>
                      <viewport>
                         <Rectangle2D />
@@ -156,7 +156,7 @@
                   </ImageView>
                   <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="109.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imagesCard/lew.jpg" />
+                        <Image url="@../imagesCard/lew.jpg" />
                      </image>
                      <viewport>
                         <Rectangle2D />

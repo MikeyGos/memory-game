@@ -2,12 +2,12 @@ module pl.memorygameszkola.memorygame {
     requires javafx.controls;
     requires javafx.fxml;
 
-    opens pl.memorygameszkola to javafx.fxml;
-    exports pl.memorygameszkola;
-    exports pl.memorygameszkola.stockOfCard;
-    opens pl.memorygameszkola.stockOfCard to javafx.fxml;
-    opens pl.memorygameszkola.controllers to javafx.fxml;
-    exports pl.memorygameszkola.controllers;
-    exports pl.memorygameszkola.matching;
-    opens pl.memorygameszkola.matching to javafx.fxml;
+    opens pl.PolishSchoolInDublin to javafx.fxml;
+    exports pl.PolishSchoolInDublin;
+    exports pl.PolishSchoolInDublin.stockOfCard;
+    opens pl.PolishSchoolInDublin.stockOfCard to javafx.fxml;
+    opens pl.PolishSchoolInDublin.controllers to javafx.fxml;
+    exports pl.PolishSchoolInDublin.controllers;
+    exports pl.PolishSchoolInDublin.matching;
+    opens pl.PolishSchoolInDublin.matching to javafx.fxml;
 }

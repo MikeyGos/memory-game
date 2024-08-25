@@ -1,4 +1,4 @@
-package pl.memorygameszkola.controllers;
+package pl.PolishSchoolInDublin.controllers;
 
 import javafx.fxml.Initializable;
 
