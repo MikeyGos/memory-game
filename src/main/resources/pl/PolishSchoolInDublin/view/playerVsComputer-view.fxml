@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../css/singlePlayer.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.PolishSchoolInDublin.controllers.PlayerVsComputerController">
+    <children>
+        <VBox alignment="CENTER" layoutX="20.0" layoutY="33.0" prefHeight="1838.6" prefWidth="800.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER">
+                    <children>
+                        <GridPane alignment="CENTER" prefHeight="142.0" prefWidth="1167.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="592.7999877929688" minWidth="10.0" prefWidth="157.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="592.7999877929688" minWidth="10.0" prefWidth="85.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1049.5999786376954" minWidth="10.0" prefWidth="231.60000000000002" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1049.5999786376954" minWidth="10.0" prefWidth="183.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1049.5999786376954" minWidth="10.0" prefWidth="336.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1049.5999786376954" minWidth="10.0" prefWidth="155.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1049.5999786376954" minWidth="10.0" prefWidth="70.99997558593759" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="72.6000244140625" minHeight="10.0" prefHeight="72.6000244140625" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="72.6000244140625" minHeight="10.0" prefHeight="72.6000244140625" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label fx:id="firstPlayerScore" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label prefHeight="47.0" prefWidth="147.0" text="Komputer" GridPane.columnIndex="5" />
+                                <Label alignment="TOP_RIGHT" text="Wynik:" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                <Label fx:id="secondPlayerScore" text="0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                                <Label alignment="CENTER" text="Wynik:" textAlignment="CENTER" GridPane.rowIndex="1" />
+                                <Label prefHeight="71.0" prefWidth="165.0" text="Gracz" />
+                                <Label text="Ilość prób: " GridPane.columnIndex="3" />
+                                <Label fx:id="attemptScore" text="0" GridPane.columnIndex="4" />
+                            </children>
+                        </GridPane>
+                    </children>
+                </HBox>
+                <FlowPane fx:id="imageFlowPane" alignment="CENTER" maxWidth="800.0">
+                    <children>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../imagesCard/lew.jpg" />
+                            </image>
+                            <FlowPane.margin>
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                            </FlowPane.margin>
+                            <viewport>
+                                <Rectangle2D />
+                            </viewport>
+                        </ImageView>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../imagesCard/znakZapytania.jpg" />
+                            </image>
+                            <FlowPane.margin>
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                            </FlowPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../imagesCard/znakZapytania.jpg" />
+                            </image>
+                            <FlowPane.margin>
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                            </FlowPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../imagesCard/znakZapytania.jpg" />
+                            </image>
+                            <FlowPane.margin>
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                            </FlowPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../imagesCard/znakZapytania.jpg" />
+                            </image>
+                            <FlowPane.margin>
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                            </FlowPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../imagesCard/znakZapytania.jpg" />
+                            </image>
+                            <FlowPane.margin>
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                            </FlowPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="26.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../imagesCard/znakZapytania.jpg" />
+                            </image>
+                            <FlowPane.margin>
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                            </FlowPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="224.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../imagesCard/znakZapytania.jpg" />
+                            </image>
+                            <FlowPane.margin>
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                            </FlowPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="900.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../imagesCard/znakZapytania.jpg" />
+                            </image>
+                            <FlowPane.margin>
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                            </FlowPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="900.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../imagesCard/znakZapytania.jpg" />
+                            </image>
+                            <FlowPane.margin>
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                            </FlowPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="109.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../imagesCard/lew.jpg" />
+                            </image>
+                            <viewport>
+                                <Rectangle2D />
+                            </viewport>
+                            <FlowPane.margin>
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                            </FlowPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="109.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../imagesCard/lew.jpg" />
+                            </image>
+                            <viewport>
+                                <Rectangle2D />
+                            </viewport>
+                            <FlowPane.margin>
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                            </FlowPane.margin>
+                        </ImageView>
+                    </children>
+                </FlowPane>
+                <HBox prefHeight="66.0" prefWidth="825.0">
+                    <children>
+                        <Button fx:id="playAgainButton" mnemonicParsing="false" onAction="#playAgain" onKeyPressed="#playAgain" prefHeight="51.0" prefWidth="226.0" text="Zagraj ponownie">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Button>
+                        <Label prefHeight="47.0" prefWidth="442.0" />
+                        <Button layoutX="60.0" layoutY="15.0" mnemonicParsing="false" onAction="#backToMenu" onKeyPressed="#playAgain" prefHeight="51.0" prefWidth="226.0" text="Wróć do menu">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Button>
+                    </children>
+                    <VBox.margin>
+                        <Insets left="100.0" right="100.0" />
+                    </VBox.margin>
+                    <padding>
+                        <Insets bottom="5.0" left="50.0" right="50.0" top="5.0" />
+                    </padding>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

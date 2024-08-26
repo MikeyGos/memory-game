@@ -28,6 +28,16 @@ public class MenuMemoryGameController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    void playerVsComputer(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MenuMemoryGame.class.getResource("/pl/PolishSchoolInDublin/view/playerVsComputer-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
     void twoPlayers(ActionEvent event) throws IOException {

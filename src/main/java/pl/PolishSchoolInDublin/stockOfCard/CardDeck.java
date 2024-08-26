@@ -26,8 +26,8 @@ public class CardDeck {
         return cardDeck.toString();
     }
     public Card topCard(){
-        if(cardDeck.size() > 0){
-            return cardDeck.remove(0);
+        if(!cardDeck.isEmpty()){
+            return cardDeck.removeFirst();
         } else
             throw new NullPointerException("Błąd cardDeck topCard");
     }

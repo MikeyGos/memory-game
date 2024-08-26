@@ -53,10 +53,24 @@ public class Card {
         return new Image(Objects.requireNonNull(Card.class.getResourceAsStream("imagesCard/znakZapytania.jpg")));
     }
 
-    public Image getRandomCard(){
+    public Image getRandomCard() {
         List<String> cardNameList = getCardNameList();
         Collections.shuffle(cardNameList);
-        return new Image(Objects.requireNonNull(Card.class.getResourceAsStream(pathName())));
+        String randomCardName = cardNameList.getFirst();  // Wybiera pierwszy element z przetasowanej listy
+        String randomCardPath = "imagesCard/" + randomCardName + ".jpg";
+        return new Image(Objects.requireNonNull(Card.class.getResourceAsStream(randomCardPath)));
     }
 
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Card card)) return false;
+
+        return Objects.equals(getCardName(), card.getCardName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getCardName());
+    }
 }
