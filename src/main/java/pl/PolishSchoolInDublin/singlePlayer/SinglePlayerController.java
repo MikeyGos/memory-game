@@ -1,8 +1,10 @@
-package pl.PolishSchoolInDublin.controllers;
+package pl.PolishSchoolInDublin.singlePlayer;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
+import pl.PolishSchoolInDublin.mainControllers.BaseMemoryGameController;
 
 import java.io.IOException;
 import java.net.URL;
@@ -10,7 +12,10 @@ import java.util.ResourceBundle;
 
 public class SinglePlayerController extends BaseMemoryGameController implements Initializable {
 
+    public Label attempt;
+    public Label playerTurnLabel;
     int singlePlayerAttemptScore = 0;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         initializeImageView();
@@ -37,27 +42,28 @@ public class SinglePlayerController extends BaseMemoryGameController implements 
 
     @Override
     protected void showWinningMessage() {
-            Alert alert = getAlert();
-            alert.showAndWait().ifPresent(response -> {
-                if (response == ButtonType.YES) {
-                    playAgain();
-                } else {
-                    try {
-                        backToMenu(null);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+        Alert alert = getAlert();
+        alert.showAndWait().ifPresent(response -> {
+            if (response == ButtonType.YES) {
+                playAgain();
+            } else {
+                try {
+                    backToMenu(null);
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
-            });
-        }
-    private Alert getAlert() {
+            }
+        });
+    }
+
+    protected Alert getAlert() {
         String winner = "";
-        if (firstScore == 6 ){
+        if (firstScore == 6) {
             winner = "Udało Ci się w ciągu " + singlePlayerAttemptScore + " ruchów";
         }
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION,
-                winner  + "\n\nCzy chcesz zagrać ponownie?",
+                winner + "\n\nCzy chcesz zagrać ponownie?",
                 ButtonType.YES,
                 ButtonType.NO);
 

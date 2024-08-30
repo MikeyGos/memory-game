@@ -43,7 +43,7 @@ public class Card {
         return cardName;
     }
     public String pathName(){
-       String pathName;
+        String pathName;
         return pathName = "imagesCard/" + cardName +".jpg";
     }
     public Image getImage(){
@@ -56,7 +56,7 @@ public class Card {
     public Image getRandomCard() {
         List<String> cardNameList = getCardNameList();
         Collections.shuffle(cardNameList);
-        String randomCardName = cardNameList.getFirst();  // Wybiera pierwszy element z przetasowanej listy
+        String randomCardName = cardNameList.getFirst();
         String randomCardPath = "imagesCard/" + randomCardName + ".jpg";
         return new Image(Objects.requireNonNull(Card.class.getResourceAsStream(randomCardPath)));
     }

@@ -1,4 +1,4 @@
-package pl.PolishSchoolInDublin.controllers;
+package pl.PolishSchoolInDublin.mainControllers;
 
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
@@ -40,7 +40,7 @@ public abstract class BaseMemoryGameController {
     protected FlowPane imageFlowPane;
 
     @FXML
-    void backToMenu(ActionEvent event) throws IOException { //back to menu bottom
+    public void backToMenu(ActionEvent event) throws IOException { //back to menu bottom
         FXMLLoader fxmlLoader = new FXMLLoader(MenuMemoryGame.class.getResource("/pl/PolishSchoolInDublin/view/menu-view.fxml"));
         Stage stage;
         if (event != null) {
@@ -54,8 +54,7 @@ public abstract class BaseMemoryGameController {
 
     @FXML
     protected void playAgain() { // play again button
-        firstCard = null;
-        secondCard = null;
+        resetSelectedCard();
         numbOfAttempt = 1;
         attemptScore.setText(String.valueOf(0));
         CardDeck cardDeck = new CardDeck();
@@ -71,6 +70,11 @@ public abstract class BaseMemoryGameController {
         Collections.shuffle(usedCardDeck);
         switchAllCards();
         updatePlayerTurn();
+    }
+
+    protected void resetSelectedCard() {
+        firstCard = null;
+        secondCard = null;
     }
 
     protected void initializeImageView() {                          //initialize image view for cards
@@ -124,15 +128,14 @@ public abstract class BaseMemoryGameController {
 
 
     public PauseTransition getPauseTransition() {
-        PauseTransition pause = new PauseTransition(Duration.seconds(1));
+        PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
         pause.setOnFinished(event -> {
             if (firstCard != null && secondCard != null) {
                 ImageView firstImage = (ImageView) imageFlowPane.getChildren().get(firstCardIndex);
                 ImageView secondImage = (ImageView) imageFlowPane.getChildren().get(secondCardIndex);
                 firstImage.setImage(firstCard.getQuestionMark());
                 secondImage.setImage(secondCard.getQuestionMark());
-                firstCard = null;
-                secondCard = null;
+                resetSelectedCard();
                 nextTurn();
             }
         });
@@ -167,8 +170,7 @@ public abstract class BaseMemoryGameController {
         } else if (firstCard.sameCard(secondCard)) {
             firstCard.setMatched(true);
             secondCard.setMatched(true);
-            firstCard = null;
-            secondCard = null;
+            resetSelectedCard();
             numbOfAttempt++;
             PauseTransition pauseTransition = getPauseTransition();
             pauseTransition.play();

@@ -3,7 +3,6 @@ package pl.PolishSchoolInDublin.matching;
 import pl.PolishSchoolInDublin.Card;
 
 public class CardMatching extends Card {
-
     private boolean matched;
 
     public CardMatching(String cardName) {

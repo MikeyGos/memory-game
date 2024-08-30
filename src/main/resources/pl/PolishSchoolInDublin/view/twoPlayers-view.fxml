@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../css/singlePlayer.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.PolishSchoolInDublin.controllers.TwoPlayersController">
+<AnchorPane fx:id="anchorPane" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../css/singlePlayer.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.PolishSchoolInDublin.twoPlayers.TwoPlayersController">
     <children>
         <VBox alignment="CENTER" layoutX="20.0" layoutY="33.0" prefHeight="1838.6" prefWidth="800.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -51,109 +51,76 @@
                 <FlowPane fx:id="imageFlowPane" alignment="CENTER" maxWidth="800.0">
                     <children>
                         <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../imagesCard/lew.jpg" />
-                            </image>
                             <FlowPane.margin>
-                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5"/>
                             </FlowPane.margin>
-                            <viewport>
-                                <Rectangle2D />
-                            </viewport>
+                            <Image url="@../imagesCard/lew.jpg"/>
                         </ImageView>
                         <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../imagesCard/znakZapytania.jpg" />
-                            </image>
                             <FlowPane.margin>
-                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5"/>
                             </FlowPane.margin>
+                            <Image url="@../imagesCard/znakZapytania.jpg"/>
                         </ImageView>
                         <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../imagesCard/znakZapytania.jpg" />
-                            </image>
                             <FlowPane.margin>
-                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5"/>
                             </FlowPane.margin>
+                            <Image url="@../imagesCard/znakZapytania.jpg"/>
                         </ImageView>
                         <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../imagesCard/znakZapytania.jpg" />
-                            </image>
                             <FlowPane.margin>
-                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5"/>
                             </FlowPane.margin>
+                            <Image url="@../imagesCard/znakZapytania.jpg"/>
                         </ImageView>
                         <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../imagesCard/znakZapytania.jpg" />
-                            </image>
                             <FlowPane.margin>
-                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5"/>
                             </FlowPane.margin>
+                            <Image url="@../imagesCard/znakZapytania.jpg"/>
                         </ImageView>
                         <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../imagesCard/znakZapytania.jpg" />
-                            </image>
                             <FlowPane.margin>
-                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5"/>
                             </FlowPane.margin>
+                            <Image url="@../imagesCard/znakZapytania.jpg"/>
                         </ImageView>
-                        <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="26.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../imagesCard/znakZapytania.jpg" />
-                            </image>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                             <FlowPane.margin>
-                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5"/>
                             </FlowPane.margin>
+                            <Image url="@../imagesCard/znakZapytania.jpg"/>
                         </ImageView>
-                        <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="224.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../imagesCard/znakZapytania.jpg" />
-                            </image>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                             <FlowPane.margin>
-                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5"/>
                             </FlowPane.margin>
+                            <Image url="@../imagesCard/znakZapytania.jpg"/>
                         </ImageView>
-                        <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="900.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../imagesCard/znakZapytania.jpg" />
-                            </image>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                             <FlowPane.margin>
-                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5"/>
                             </FlowPane.margin>
+                            <Image url="@../imagesCard/znakZapytania.jpg"/>
                         </ImageView>
-                        <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="900.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../imagesCard/znakZapytania.jpg" />
-                            </image>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                             <FlowPane.margin>
-                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5"/>
                             </FlowPane.margin>
+                            <Image url="@../imagesCard/znakZapytania.jpg"/>
                         </ImageView>
-                        <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="109.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../imagesCard/lew.jpg" />
-                            </image>
-                            <viewport>
-                                <Rectangle2D />
-                            </viewport>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                             <FlowPane.margin>
-                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5"/>
                             </FlowPane.margin>
+                            <Image url="@../imagesCard/znakZapytania.jpg"/>
                         </ImageView>
-                        <ImageView fitHeight="200.0" fitWidth="180.0" layoutX="109.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../imagesCard/lew.jpg" />
-                            </image>
-                            <viewport>
-                                <Rectangle2D />
-                            </viewport>
+                        <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                             <FlowPane.margin>
-                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5" />
+                                <Insets bottom="8.5" left="8.5" right="8.5" top="8.5"/>
                             </FlowPane.margin>
+                            <Image url="@../imagesCard/znakZapytania.jpg"/>
                         </ImageView>
                     </children>
                 </FlowPane>
