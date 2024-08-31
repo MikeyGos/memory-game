@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -111,6 +112,7 @@ public abstract class BaseMemoryGameController {
         if (firstCard == null) {
             firstCard = usedCardDeck.get(indexCard);
             firstCardIndex = indexCard;
+
             image.setImage(firstCard.getImage());
         } else if (secondCard == null) {
             secondCard = usedCardDeck.get(indexCard);
@@ -165,7 +167,7 @@ public abstract class BaseMemoryGameController {
 
 
     protected void checkMatched() {
-        if (firstCardIndex == secondCardIndex) {
+        if (firstCard == secondCard) {
             secondCard = null;
         } else if (firstCard.sameCard(secondCard)) {
             firstCard.setMatched(true);
@@ -210,7 +212,7 @@ public abstract class BaseMemoryGameController {
         });
     }
 
-    private Alert getAlert() {
+    protected Alert getAlert() {
         String winner;
         if (firstScore > secondScore) {
             winner = "Gracz 1 wygrywa!";
@@ -219,11 +221,15 @@ public abstract class BaseMemoryGameController {
         } else {
             winner = "Remis!";
         }
-
+        return getAlert(winner);
+    }
+    protected Alert getAlert(String winner) {
+        ButtonType buttonYes = new ButtonType("Tak", ButtonBar.ButtonData.YES);
+        ButtonType buttonNo = new ButtonType("Nie", ButtonBar.ButtonData.YES);
         Alert alert = new Alert(Alert.AlertType.INFORMATION,
                 winner + "\n\nCzy chcesz zagrać ponownie?",
-                ButtonType.YES,
-                ButtonType.NO);
+                buttonYes,
+                buttonNo);
 
         alert.setHeaderText(null);
         alert.setTitle("Koniec gry");

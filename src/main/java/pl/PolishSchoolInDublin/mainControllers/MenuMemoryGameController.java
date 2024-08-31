@@ -31,7 +31,7 @@ public class MenuMemoryGameController implements Initializable {
     }
     @FXML
     void playerVsComputer(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/pl/PolishSchoolInDublin/view/difficultySelection-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/pl/PolishSchoolInDublin/view/playerVsComputer-view.fxml"));
         Parent root = fxmlLoader.load();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

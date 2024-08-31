@@ -21,4 +21,5 @@ public class CardMatching extends Card {
     public boolean sameCard(CardMatching secondCard){
         return (this.getCardName().equals(secondCard.getCardName()));
     }
+
 }

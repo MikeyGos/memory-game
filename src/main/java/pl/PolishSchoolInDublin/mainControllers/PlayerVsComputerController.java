@@ -5,26 +5,19 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class PlayerVsComputerController extends BaseMemoryGameController implements Initializable {
 
-    private DifficultyLevel difficultyLevel;
-    private final Map<Integer, String> knownCards;
     private Random random = new Random();
     private int firstCardIndex;
-
-    public enum DifficultyLevel {
-        EASY, MEDIUM, HARD
-    }
+    private int secondCardIndex;
 
     @FXML
     private Label firstPlayerScore;
@@ -63,32 +56,26 @@ public class PlayerVsComputerController extends BaseMemoryGameController impleme
     }
 
     public PlayerVsComputerController() {
-        this.difficultyLevel = DifficultyLevel.EASY;
-        this.knownCards = new HashMap<>();
+        // Usunięcie HashMap knownCards
     }
 
     private void getFirstCardIndex() {
-
         do {
             firstCardIndex = random.nextInt(usedCardDeck.size());
         } while (usedCardDeck.get(firstCardIndex).isMatched());
-        System.out.println(firstCardIndex);
     }
 
     private void getSecondCardIndex() {
         do {
             secondCardIndex = random.nextInt(usedCardDeck.size());
         } while (secondCardIndex == firstCardIndex || usedCardDeck.get(secondCardIndex).isMatched());
-        System.out.println(secondCardIndex);
     }
 
     public void computerMove() {
         disableUserInteraction(true);
-        getFirstCardIndex();
-        getSecondCardIndex();
-
+        selectCardsBasedOnRandomDifficulty(); // Wybierz karty w zależności od losowej liczby
         switchCard(firstCardIndex);
-        PauseTransition pauseAfterFirstCard = new PauseTransition(Duration.seconds(1));
+        PauseTransition pauseAfterFirstCard = new PauseTransition(Duration.seconds(0.5));
         pauseAfterFirstCard.setOnFinished(event -> {
             switchCard(secondCardIndex);
         });
@@ -97,7 +84,9 @@ public class PlayerVsComputerController extends BaseMemoryGameController impleme
 
     @Override
     protected void checkMatched() {
-        if (firstCard.sameCard(secondCard)) {
+        if (firstCard == secondCard) {
+            secondCard = null;
+        } else if (firstCard.sameCard(secondCard)) {
             firstCard.setMatched(true);
             secondCard.setMatched(true);
             resetSelectedCard();
@@ -105,7 +94,7 @@ public class PlayerVsComputerController extends BaseMemoryGameController impleme
             PauseTransition pauseTransition = getPauseTransition();
             pauseTransition.play();
             score();
-            if (currentPlayer == 1) {       // have to be checked player, animation error
+            if (currentPlayer == 1) {
                 if (allCardsMatched()) {
                     showWinningMessage();
                 }
@@ -119,7 +108,7 @@ public class PlayerVsComputerController extends BaseMemoryGameController impleme
 
     @Override
     public PauseTransition getPauseTransition() {
-        PauseTransition pause = new PauseTransition(Duration.seconds(1));
+        PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
         pause.setOnFinished(event -> {
             if (firstCard != null && secondCard != null) {
                 ImageView firstImage = (ImageView) imageFlowPane.getChildren().get(firstCardIndex);
@@ -150,15 +139,59 @@ public class PlayerVsComputerController extends BaseMemoryGameController impleme
         }
     }
 
-    public void startGameVsComputer(DifficultyLevel difficultyLevel) {
-        this.difficultyLevel = difficultyLevel;
-        playAgain();
-    }
-
     protected void disableUserInteraction(boolean disable) {
         for (Node node : imageFlowPane.getChildren()) {
             node.setDisable(disable);
         }
     }
 
+    @Override
+    protected Alert getAlert() {
+        String winner;
+        if (firstScore > secondScore) {
+            winner = "Wygrałeś!!";
+        } else if (secondScore > firstScore) {
+            winner = "Komputer wygrał!!";
+        } else {
+            winner = "Remis!";
+        }
+        return getAlert(winner);
+    }
+
+    private void selectCardsBasedOnRandomDifficulty() {
+        int randomValue = random.nextInt(11);
+        System.out.println(randomValue);
+        if (randomValue > 6) {
+            selectBestKnownFirstCard();
+            findKnownCardPair();
+        } else {
+            getFirstCardIndex();
+            getSecondCardIndex();
+        }
+    }
+
+    private void findKnownCardPair() {
+        for (int i = 0; i < usedCardDeck.size(); i++) {
+            if (!usedCardDeck.get(i).isMatched()) {
+                String cardName = usedCardDeck.get(i).getCardName();
+                for (int j = i + 1; j < usedCardDeck.size(); j++) {
+                    if (!usedCardDeck.get(j).isMatched() && usedCardDeck.get(j).getCardName().equals(cardName)) {
+                        firstCardIndex = i;
+                        secondCardIndex = j;
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
+    private void selectBestKnownFirstCard() {
+        for (int i = 0; i < usedCardDeck.size(); i++) {
+            if (!usedCardDeck.get(i).isMatched()) {
+                firstCardIndex = i;
+                return;
+            }
+        }
+        getFirstCardIndex();
+    }
 }
