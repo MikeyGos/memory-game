@@ -1,6 +1,8 @@
 package pl.PolishSchoolInDublin;
 
 import javafx.scene.image.Image;
+import pl.PolishSchoolInDublin.mainControllers.CollectionController;
+import pl.PolishSchoolInDublin.session.SessionManager;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -10,9 +12,10 @@ import java.util.Objects;
 public class Card {
 
     private String cardName;
+    List<String> fruit = Arrays.asList("ananas", "arbuz", "banan", "cytryna", "gruszka", "jablko", "kiwi", "pomarancza", "truskawka");
+    List<String> animal = Arrays.asList("hiena", "lew", "mufasa", "pumba", "rafiki", "skaza", "timon", "zazu");
 
-    public Card() {
-    }
+    public Card() {}
 
     public Card(String cardName) {
         setCardName(cardName);
@@ -23,7 +26,12 @@ public class Card {
     }
 
     public List<String> getCardNameList() {
-        return Arrays.asList("hiena", "lew", "mufasa", "pumba", "rafiki", "skaza", "timon", "zazu");
+        SessionManager session = SessionManager.getInstance();
+        if (session.isFruitSelected()) {
+            return fruit;
+        } else {
+            return animal;
+        }
     }
 
     public void setCardName(String cardName) {
@@ -38,26 +46,22 @@ public class Card {
         }
     }
 
+    public String pathName() {
+        return "imagesCard/" + cardName + ".jpg";
+    }
 
-    @Override
-    public String toString() {
-        return cardName;
-    }
-    public String pathName(){
-        String pathName;
-        return pathName = "imagesCard/" + cardName +".jpg";
-    }
-    public Image getImage(){
+    public Image getImage() {
         return new Image(Objects.requireNonNull(Card.class.getResourceAsStream(pathName())));
     }
-    public Image getQuestionMark(){
+
+    public Image getQuestionMark() {
         return new Image(Objects.requireNonNull(Card.class.getResourceAsStream("imagesCard/znakZapytania.jpg")));
     }
 
     public Image getRandomCard() {
         List<String> cardNameList = getCardNameList();
         Collections.shuffle(cardNameList);
-        String randomCardName = cardNameList.getFirst();
+        String randomCardName = cardNameList.get(0);
         String randomCardPath = "imagesCard/" + randomCardName + ".jpg";
         return new Image(Objects.requireNonNull(Card.class.getResourceAsStream(randomCardPath)));
     }
@@ -66,12 +70,16 @@ public class Card {
     public final boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Card card)) return false;
-
         return Objects.equals(getCardName(), card.getCardName());
     }
 
     @Override
     public int hashCode() {
         return Objects.hashCode(getCardName());
+    }
+
+    @Override
+    public String toString() {
+        return cardName;
     }
 }

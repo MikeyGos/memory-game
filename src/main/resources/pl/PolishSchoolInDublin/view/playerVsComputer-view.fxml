@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../css/singlePlayer.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.PolishSchoolInDublin.mainControllers.PlayerVsComputerController">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@../css/singlePlayer.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.PolishSchoolInDublin.mainControllers.PlayerVsComputerController">
     <children>
         <VBox alignment="CENTER" layoutX="20.0" layoutY="33.0" prefHeight="1838.6" prefWidth="800.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -126,7 +126,7 @@
                 </FlowPane>
                 <HBox prefHeight="66.0" prefWidth="825.0">
                     <children>
-                        <Button fx:id="playAgainButton" mnemonicParsing="false" onAction="#playAgain" onKeyPressed="#playAgain" prefHeight="51.0" prefWidth="226.0" text="Zagraj ponownie">
+                        <Button mnemonicParsing="false" onAction="#playAgain" onKeyPressed="#playAgain" prefHeight="51.0" prefWidth="226.0" text="Zagraj ponownie">
                             <font>
                                 <Font size="24.0" />
                             </font>

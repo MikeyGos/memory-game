@@ -235,5 +235,4 @@ public abstract class BaseMemoryGameController {
         alert.setTitle("Koniec gry");
         return alert;
     }
-
 }

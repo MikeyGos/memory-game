@@ -31,7 +31,7 @@ public class MenuMemoryGameController implements Initializable {
     }
     @FXML
     void playerVsComputer(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/pl/PolishSchoolInDublin/view/playerVsComputer-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MenuMemoryGame.class.getResource("/pl/PolishSchoolInDublin/view/playerVsComputer-view.fxml"));
         Parent root = fxmlLoader.load();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -45,6 +45,16 @@ public class MenuMemoryGameController implements Initializable {
         Scene scene = new Scene(fxmlLoader.load());
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    void collection(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MenuMemoryGame.class.getResource("/pl/PolishSchoolInDublin/view/choice-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 
         stage.setScene(scene);
         stage.show();
