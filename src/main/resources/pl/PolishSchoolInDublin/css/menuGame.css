@@ -6,3 +6,9 @@
     -fx-font-size: 40pt;
     -fx-background-color: #bcaaa4;
 }
+.button#pl{
+    -fx-font-size: 10pt ;
+}
+.button#eng{
+    -fx-font-size: 10pt ;
+}

@@ -2,6 +2,7 @@ package pl.PolishSchoolInDublin.twoPlayers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import pl.PolishSchoolInDublin.mainControllers.BaseMemoryGameController;
 
@@ -9,8 +10,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class TwoPlayersController extends BaseMemoryGameController implements Initializable {
-
-
     @FXML
     private Label firstPlayerScore;
 
@@ -44,6 +43,20 @@ public class TwoPlayersController extends BaseMemoryGameController implements In
             secondPlayerScore.setText(Integer.toString(secondScore));
         }
     }
+    @Override
+    protected Alert getAlert() {
+        String winner;
+        if (firstScore > secondScore) {
+            winner = "1 Gracz wygrał!";
+        } else if (secondScore > firstScore) {
+            winner = "2 Gracz wygrał!";
+        } else {
+            winner = "Remis!";
+        }
+        return getAlert(winner);
+    }
+
+
 }
 
 

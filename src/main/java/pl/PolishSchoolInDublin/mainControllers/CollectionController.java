@@ -13,8 +13,6 @@ import java.io.IOException;
 
 public class CollectionController {
 
-    private Card card;
-
     @FXML
     private Button fruitButton;
 
@@ -22,21 +20,25 @@ public class CollectionController {
     private Button animalButton;
 
     @FXML
+    private Button tailsButton;
+    @FXML
     public void initialize() {
-        card = new Card();
     }
 
     @FXML
     public void handleFruitClick() {
-        // Ustawiamy wybór "fruit" jako true
         SessionManager.getInstance().setFruitSelected(true);
         loadMenu();
     }
 
     @FXML
     public void handleAnimalClick() {
-        // Ustawiamy wybór "animal" jako true
         SessionManager.getInstance().setAnimalSelected(true);
+        loadMenu();
+    }
+    @FXML
+    public void handleTailsClick() {
+        SessionManager.getInstance().setTailsSelected(true);
         loadMenu();
     }
 

@@ -15,7 +15,7 @@ import java.util.*;
 
 public class PlayerVsComputerController extends BaseMemoryGameController implements Initializable {
 
-    private Random random = new Random();
+    private final Random random = new Random();
     private int firstCardIndex;
     private int secondCardIndex;
 
@@ -54,11 +54,6 @@ public class PlayerVsComputerController extends BaseMemoryGameController impleme
             secondPlayerScore.setText(Integer.toString(secondScore));
         }
     }
-
-    public PlayerVsComputerController() {
-        // Usunięcie HashMap knownCards
-    }
-
     private void getFirstCardIndex() {
         do {
             firstCardIndex = random.nextInt(usedCardDeck.size());
@@ -73,7 +68,7 @@ public class PlayerVsComputerController extends BaseMemoryGameController impleme
 
     public void computerMove() {
         disableUserInteraction(true);
-        selectCardsBasedOnRandomDifficulty(); // Wybierz karty w zależności od losowej liczby
+        selectCardsBasedOnRandomDifficulty();
         switchCard(firstCardIndex);
         PauseTransition pauseAfterFirstCard = new PauseTransition(Duration.seconds(0.5));
         pauseAfterFirstCard.setOnFinished(event -> {
@@ -160,8 +155,7 @@ public class PlayerVsComputerController extends BaseMemoryGameController impleme
 
     private void selectCardsBasedOnRandomDifficulty() {
         int randomValue = random.nextInt(11);
-        System.out.println(randomValue);
-        if (randomValue > 6) {
+        if (randomValue > 8) {
             selectBestKnownFirstCard();
             findKnownCardPair();
         } else {
@@ -193,5 +187,14 @@ public class PlayerVsComputerController extends BaseMemoryGameController impleme
             }
         }
         getFirstCardIndex();
+    }
+
+    @Override
+    protected void updatePlayerTurn() {
+        if (currentPlayer == 1) {
+            imageFlowPane.setStyle("-fx-background-color: Blue");
+        } else {
+            imageFlowPane.setStyle("-fx-background-color: #25ce25");
+        }
     }
 }

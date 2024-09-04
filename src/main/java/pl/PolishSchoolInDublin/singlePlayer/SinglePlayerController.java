@@ -2,6 +2,7 @@ package pl.PolishSchoolInDublin.singlePlayer;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import pl.PolishSchoolInDublin.mainControllers.BaseMemoryGameController;
@@ -41,34 +42,15 @@ public class SinglePlayerController extends BaseMemoryGameController implements 
     }
 
     @Override
-    protected void showWinningMessage() {
-        Alert alert = getAlert();
-        alert.showAndWait().ifPresent(response -> {
-            if (response == ButtonType.YES) {
-                playAgain();
-            } else {
-                try {
-                    backToMenu(null);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
-
     protected Alert getAlert() {
         String winner = "";
         if (firstScore == 6) {
             winner = "Udało Ci się w ciągu " + singlePlayerAttemptScore + " ruchów";
         }
-
-        Alert alert = new Alert(Alert.AlertType.INFORMATION,
-                winner + "\n\nCzy chcesz zagrać ponownie?",
-                ButtonType.YES,
-                ButtonType.NO);
-
-        alert.setHeaderText(null);
-        alert.setTitle("Koniec gry");
-        return alert;
+        return getAlert(winner);
     }
+
+
+
+
 }

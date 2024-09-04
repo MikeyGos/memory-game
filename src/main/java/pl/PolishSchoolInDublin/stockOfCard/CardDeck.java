@@ -29,6 +29,6 @@ public class CardDeck {
         if(!cardDeck.isEmpty()){
             return cardDeck.removeFirst();
         } else
-            throw new NullPointerException("Błąd cardDeck topCard");
+            throw new NullPointerException("Error on cardDeck TopCard");
     }
 }

@@ -1,7 +1,6 @@
 package pl.PolishSchoolInDublin;
 
 import javafx.scene.image.Image;
-import pl.PolishSchoolInDublin.mainControllers.CollectionController;
 import pl.PolishSchoolInDublin.session.SessionManager;
 
 import java.util.Arrays;
@@ -14,7 +13,7 @@ public class Card {
     private String cardName;
     List<String> fruit = Arrays.asList("ananas", "arbuz", "banan", "cytryna", "gruszka", "jablko", "kiwi", "pomarancza", "truskawka");
     List<String> animal = Arrays.asList("hiena", "lew", "mufasa", "pumba", "rafiki", "skaza", "timon", "zazu");
-
+    List<String> tails = Arrays.asList("kafelek1","kafelek2","kafelek3","kafelek4","kafelek5","kafelek6","kafelek7","kafelek8","kafelek9");
     public Card() {}
 
     public Card(String cardName) {
@@ -29,11 +28,13 @@ public class Card {
         SessionManager session = SessionManager.getInstance();
         if (session.isFruitSelected()) {
             return fruit;
-        } else {
+        } else if (session.isAnimalSelected()) {
             return animal;
+        } else if (session.isTailsSelected()) {
+            return tails;
         }
+        return tails;
     }
-
     public void setCardName(String cardName) {
         if (cardName == null) {
             throw new NullPointerException("Null to nie nazwa karty");
@@ -61,7 +62,7 @@ public class Card {
     public Image getRandomCard() {
         List<String> cardNameList = getCardNameList();
         Collections.shuffle(cardNameList);
-        String randomCardName = cardNameList.get(0);
+        String randomCardName = cardNameList.getFirst();
         String randomCardPath = "imagesCard/" + randomCardName + ".jpg";
         return new Image(Objects.requireNonNull(Card.class.getResourceAsStream(randomCardPath)));
     }

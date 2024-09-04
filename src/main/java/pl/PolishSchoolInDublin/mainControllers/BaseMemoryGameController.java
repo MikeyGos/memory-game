@@ -196,11 +196,10 @@ public abstract class BaseMemoryGameController {
         return true;
     }
 
-    protected void showWinningMessage() {
+    public void showWinningMessage() {
         Alert alert = getAlert();
-
         alert.showAndWait().ifPresent(response -> {
-            if (response == ButtonType.YES) {
+            if (response.getButtonData() == ButtonBar.ButtonData.YES) {
                 playAgain();
             } else {
                 try {
@@ -223,9 +222,10 @@ public abstract class BaseMemoryGameController {
         }
         return getAlert(winner);
     }
-    protected Alert getAlert(String winner) {
+
+    public Alert getAlert(String winner) {
         ButtonType buttonYes = new ButtonType("Tak", ButtonBar.ButtonData.YES);
-        ButtonType buttonNo = new ButtonType("Nie", ButtonBar.ButtonData.YES);
+        ButtonType buttonNo = new ButtonType("Nie", ButtonBar.ButtonData.NO);
         Alert alert = new Alert(Alert.AlertType.INFORMATION,
                 winner + "\n\nCzy chcesz zagrać ponownie?",
                 buttonYes,
