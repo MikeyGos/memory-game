@@ -3,6 +3,7 @@ The game was created for a Polish school in Dublin for internal use. They couldn
 
 ## Game recording
 https://www.youtube.com/watch?v=cFkvu2rMd-w
+
 Without downloading the game, you can see in the video (above) how it looks in practice.
 
 ## Creating a game
