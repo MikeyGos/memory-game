@@ -7,10 +7,15 @@ Later I encountered many problems, such as:
 
  - animation errors:
 After the game ends, a window pops up about winning or losing (unfortunately, the recording program did not record it).
-
+![Windows on the screen](src/main/resources/pl/PolishSchoolInDublin/windowsPlayAgain.jpg)
 When the AI ​​won, an error popped up.
 
-To solve this problem, I invented the function "Platform.runLater(this::showWinningMessage)",
+To solve this problem, I invented the function 
+
+
+Platform.runLater(this::showWinningMessage)
+
+
 which told the GUI to display the window only after the cards finished animating.
 
  - possibility to click during the AI's turn:
