@@ -1,5 +1,10 @@
 # Project overview 
 The game was created for a Polish school in Dublin for internal use. They couldn't use commercial games, so I took the initiative to create a game for them. 
+
+## Game recording
+https://www.youtube.com/watch?v=cFkvu2rMd-w
+Without downloading the game, you can see in the video (above) how it looks in practice.
+
 ## Creating a game
 Creating the game gave me a lot of joy (I like playing), but also a lot of problems. Before I started the JavaFX project, it was completely unknown to me, but with the help of Gluon I managed to create the first window, the first tiles.
 
