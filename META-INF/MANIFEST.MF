@@ -1,0 +1,4 @@
+Manifest-Version: 0.8
+Created-By: 21.0.2 (Oracle Corporation)
+Main-Class: pl.PolishSchoolInDublin.MenuMemoryGame
+

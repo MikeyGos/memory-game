@@ -14,4 +14,6 @@ module pl.memorygameszkola.memorygame {
     opens pl.PolishSchoolInDublin.singlePlayer to javafx.fxml;
     exports pl.PolishSchoolInDublin.twoPlayers;
     opens pl.PolishSchoolInDublin.twoPlayers to javafx.fxml;
+    exports pl.PolishSchoolInDublin.session;
+    opens pl.PolishSchoolInDublin.session to javafx.fxml;
 }

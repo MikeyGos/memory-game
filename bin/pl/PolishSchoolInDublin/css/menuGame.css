@@ -1,0 +1,14 @@
+.root{
+    -fx-font-size: 30pt ;
+    -fx-background-color: #d7ccc8;
+}
+.button{
+    -fx-font-size: 40pt;
+    -fx-background-color: #bcaaa4;
+}
+.button#pl{
+    -fx-font-size: 10pt ;
+}
+.button#eng{
+    -fx-font-size: 10pt ;
+}
