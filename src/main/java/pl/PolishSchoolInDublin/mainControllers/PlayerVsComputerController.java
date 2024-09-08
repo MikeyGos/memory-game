@@ -155,7 +155,8 @@ public class PlayerVsComputerController extends BaseMemoryGameController impleme
 
     private void selectCardsBasedOnRandomDifficulty() {
         int randomValue = random.nextInt(11);
-        if (randomValue > 8) {
+        System.out.println(randomValue);
+        if (randomValue > 6) {
             selectBestKnownFirstCard();
             findKnownCardPair();
         } else {

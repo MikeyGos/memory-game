@@ -1,4 +1,4 @@
-module pl.memorygameszkola.memorygame {
+module pl.PolishSchoolInDublin {
     requires javafx.controls;
     requires javafx.fxml;
 
