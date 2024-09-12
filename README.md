@@ -7,11 +7,11 @@ https://www.youtube.com/watch?v=cFkvu2rMd-w
 Without downloading the game, you can see in the video (above) how it looks in practice.
 
 ## How to open
-git clone https://github.com/MikeyGos/memory-game.git
+```git clone https://github.com/MikeyGos/memory-game.git```
 
-cd D:\memory-game\out\artifacts\memory_game_jar   <- path depends on where the location was downloaded 
+```cd \memory-game\out\artifacts\memory_game_jar ```
 
-java -jar memory-game.jar
+```java -jar memory-game.jar```
 
 ## Creating a game
 Creating the game gave me a lot of joy (I like playing), but also a lot of problems. Before I started the JavaFX project, it was completely unknown to me, but with the help of Gluon I managed to create the first window, the first tiles.
